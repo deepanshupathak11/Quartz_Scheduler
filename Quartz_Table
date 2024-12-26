@@ -1,9 +1,12 @@
-#
 # I didn't see this anywhere, so I thought I'd post it here. This is the script from Quartz to create the tables in a MySQL database, modified to use INNODB instead of MYISAM.
-# Hey don't confuse just Simply run this Code into your any MySQL ide into your Database
+# Hey don't confuse, just Simply run this Code into your any MySQL ide into your Database
+
+# REMEMBER Quartz_Table and Cron_Table should be in same database
 
 # For any other query connect me on Linkedin- https://www.linkedin.com/in/deepanshupathak?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app 
-#
+
+
+
 
 DROP TABLE IF EXISTS QRTZ_FIRED_TRIGGERS;
 DROP TABLE IF EXISTS QRTZ_PAUSED_TRIGGER_GRPS;
