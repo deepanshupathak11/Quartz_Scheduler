@@ -1,0 +1,25 @@
+# It is a CronJob table
+# Create this table into same database you created Quartz_Table (or vice versa)
+# REMEMBER Quartz_Table and Cron_Table should be in same database
+
+
+CREATE TABLE cron_jobs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cron_expression VARCHAR(255) NOT NULL,
+    job_class VARCHAR(255) NOT NULL,
+    job_method VARCHAR(255) NOT NULL,
+    enabled TINYINT(1) NOT NULL DEFAULT 0
+);
+
+
+*****************************************************************************************************************************************************************************************************************
+
+# VERY IMPORTANT 
+# ONLY RUN THIS QUERY IN YOUR DATABASE AFTER YOU ARE DONE WITH ALL OTHER STEPS
+# IT WILL SCHEDULE A JOB FOR EVERY 30 SECOND (i.e) WILL PRINT HELLO WORLD ! 
+
+
+INSERT INTO jobs (cron_expression, job_class, job_method, enabled) 
+VALUES ('*/30 * * * * ?', 'eleserv.project.Emailer.Service.MyJob', 'execute', 1);
+
+
